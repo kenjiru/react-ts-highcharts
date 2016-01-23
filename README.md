@@ -1,18 +1,15 @@
+Install the node modules:
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+`npm install`
 
+Install the TypeScript definition files:
 
-Hi there! Welcome to Cloud9 IDE!
+`tsd install`
 
-To get you started, create some files, play with the terminal,
-or visit http://docs.c9.io for our documentation.
-If you want, you can also go watch some training videos at
-http://www.youtube.com/user/c9ide.
+Start the webpack-dev-server:
 
-Happy coding!
-The Cloud9 IDE team
+`npm run debug`
+
+Build the project:
+
+`npm run build`
