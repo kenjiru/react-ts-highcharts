@@ -2,12 +2,19 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import 'react-highcharts/dist/bundle/highcharts';
-import ReactHighcharts from 'react-highcharts'; // Expects that Highcharts was loaded in the code.
+import Highcharts from 'highcharts';
+import addFunnel from 'highcharts/modules/funnel';
 
 import './App.less';
 
 class App extends React.Component {
+	componentDidMount() {
+		// After window is present, normally on componentDidMount or in the callback of ReactDOM.render
+		addFunnel(Highcharts);
+
+		Highcharts.chart(ReactDOM.findDOMNode(this), { /*Options*/ });
+	}
+
 	render() {
 		let chartsConfig = {};
 
@@ -15,7 +22,6 @@ class App extends React.Component {
 			<div>
 				<h1>App title</h1>
 				<div>App content</div>
-				<ReactHighcharts config={chartsConfig}/>
 			</div>
 		);
 	}
