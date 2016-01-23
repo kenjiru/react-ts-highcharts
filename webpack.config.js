@@ -16,9 +16,9 @@ var config = {
 			[
 				'webpack-dev-server/client?http://0.0.0.0:8080',
 				'webpack/hot/dev-server',
-				src_dir + '/App.js'
+				src_dir + '/App.tsx'
 			],
-			src_dir + '/App.js'
+			src_dir + '/App.tsx'
 		)
 	},
 	output: {
@@ -34,8 +34,14 @@ var config = {
 					['babel']
 				),
 				include: src_dir
-			},
-			{
+			}, {
+				test: /\.tsx$/,
+				loaders: envDep(
+					['react-hot', 'babel-loader', 'ts-loader'],
+					['babel-loader', 'ts-loader']
+				),
+				include: src_dir
+			}, {
 				test: /\.less$/,
 				loader: envDep(
 					"style-loader!css-loader!autoprefixer-loader!less-loader",
