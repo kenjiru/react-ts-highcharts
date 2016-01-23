@@ -13,8 +13,7 @@
 		"sourceMap": true
 	},
 	"files": [
-		"../typings/react/react-dom.d.ts",
-		"../typings/react/react.d.ts",
+		"../typings-custom/tsd.d.ts",
 		"../typings/tsd.d.ts",
 		"App.tsx"
 	],
