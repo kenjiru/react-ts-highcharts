@@ -2,23 +2,15 @@
   "name": "react-ts-highcharts",
   "version": "1.0.0",
   "dependencies": {
-    "highcharts": "^4.2.1",
+    "highcharts": "^4.2.3",
     "jquery": "^2.2.0",
     "react": "~0.14.5",
-    "react-dom": "^0.14.5",
-    "react-highcharts": "^6.0.0"
+    "react-dom": "~0.14.5",
+    "react-highcharts": "^8.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.0",
     "autoprefixer-loader": "^3.2.0",
-    "babel-core": "^6.0.0",
-    "babel-eslint": "^5.0.0-beta4",
-    "babel-loader": "^6.0.0",
-    "babel-plugin-react-transform": "^2.0.0-beta1",
-    "babel-polyfill": "^6.0.0",
-    "babel-preset-es2015": "^6.0.0",
-    "babel-preset-react": "^6.0.0",
-    "babel-preset-stage-0": "^6.0.0",
     "css-loader": "^0.23.1",
     "del": "~2.2.0",
     "eslint-plugin-react": "^3.6.2",
@@ -26,24 +18,20 @@
     "file-loader": "^0.8.4",
     "html-minifier": "^1.0.1",
     "html-webpack-plugin": "~1.7.0",
+    "html-webpack-template": "^4.0.0",
     "less": "^2.5.1",
     "less-loader": "^2.2.1",
-    "null-loader": "^0.1.1",
     "optimist": "^0.6.1",
     "react-hot-loader": "^1.3.0",
-    "react-transform-catch-errors": "^1.0.1",
-    "react-transform-hmr": "^1.0.1",
-    "redbox-react": "^1.2.0",
     "style-loader": "^0.13.0",
-    "ts-loader": "^0.7.2",
-    "typescript": "^1.6.2",
+    "ts-loader": "^0.8.0",
+    "typescript": "^1.8.0",
     "url-loader": "~0.5.6",
-    "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.0.0",
-    "webpack-notifier": "^1.2.1"
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
   },
   "scripts": {
-    "debug": "webpack-dev-server --config webpack.config.js --hot --colors -d",
+    "debug": "webpack-dev-server --config webpack.config.js --colors --hot --inline --dev",
     "build": "rm -rf dist/** && webpack --config webpack.config.js --devtool source-map"
   },
   "engines": {

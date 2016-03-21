@@ -10,16 +10,10 @@ var modules_dir = path.join(__dirname, "/node_modules");
 var src_dir = path.join(__dirname, "/src");
 
 var config = {
+	devtool: "cheap-module-eval-source-map",
 	context: __dirname,
 	entry: {
-		app: envDep(
-			[
-				'webpack-dev-server/client?http://0.0.0.0:8080',
-				'webpack/hot/dev-server',
-				src_dir + '/App.tsx'
-			],
-			src_dir + '/App.tsx'
-		)
+		app: src_dir + '/App.tsx'
 	},
 	output: {
 		path: path.join(__dirname, '/dist'),
@@ -28,17 +22,10 @@ var config = {
 	module: {
 		loaders: [
 			{
-				test: /\.js$/,
-				loaders: envDep(
-					['react-hot', 'babel'],
-					['babel']
-				),
-				include: src_dir
-			}, {
 				test: /\.tsx$/,
 				loaders: envDep(
-					['react-hot', 'babel-loader', 'ts-loader'],
-					['babel-loader', 'ts-loader']
+					['react-hot', 'ts-loader'],
+					['ts-loader']
 				),
 				include: src_dir
 			}, {
@@ -61,12 +48,11 @@ var config = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-		    title: "React TypeScript demo"
+		    title: "Highcharts demo"
 		}),
 		new ProvidePlugin({
 			$: "jquery",
-			jQuery: "jquery",
-			React: "react/addons"
+			jQuery: "jquery"
 		})
 	]
 };
@@ -81,5 +67,5 @@ function envDep(dev, prod) {
 }
 
 function isDev() {
-	return !!argv.d;
+	return !!argv.dev;
 }
